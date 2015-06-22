@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./node_modules/.bin/istanbul cover --preload-sources -x **/db/migrations/* -x **/bin/** ./node_modules/.bin/_mocha -- -R spec -u bdd --require should --recursive -t 30000

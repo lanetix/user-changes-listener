@@ -1,0 +1,39 @@
+{
+  "name": "lanetix-user-changes-listener",
+  "version": "1.0.0",
+  "engines": {},
+  "scripts": {
+    "lint": "eslint --ignore-path .gitignore .",
+    "test": "bin/test",
+    "cover": "bin/cover",
+    "check-coverage": "bin/check-coverage"
+  },
+  "dependencies": {
+    "@lanetix/make-token": "^1.2.0",
+    "amqplib-easy": "^3",
+    "bluebird": "^2",
+    "bookshelf": "^0.7",
+    "bookshelf-deep-changed": "^1.0.0",
+    "http-as-promised": "^1",
+    "jsonwebtoken": "^5.0.2",
+    "knex": "0.7.4",
+    "knex-pg-customschema": "^1",
+    "lanetix-microservice": "^1.6.1",
+    "nock": "^2.7.0",
+    "pg": "^3",
+    "request-promise": "^0.4.2",
+    "underscore": "^1"
+  },
+  "devDependencies": {
+    "chance": "^0.6",
+    "eslint": "^0.24",
+    "eslint-plugin-nodeca": "^1",
+    "factory-girl": "^1",
+    "factory-girl-bookshelf": "^0.1",
+    "factory-girl-bookshelf-forge": "^1",
+    "istanbul": "^0.3.13",
+    "mocha": "^2",
+    "should": "^4",
+    "sinon": "^1"
+  }
+}
