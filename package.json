@@ -1,6 +1,6 @@
 {
   "name": "lanetix-user-changes-listener",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {},
   "scripts": {
     "lint": "eslint --ignore-path .gitignore .",
