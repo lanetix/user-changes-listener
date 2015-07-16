@@ -1,6 +1,6 @@
 'use strict';
 
-var config = require('../config')({ queueName: 'api_worker_users' }),
+var config = require('../config'),
   path = require('path'),
   configuration = {
     client: 'postgresql',

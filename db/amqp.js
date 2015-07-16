@@ -1,7 +1,7 @@
 'use strict';
 
 var _ = require('underscore'),
-  config = require('../config')(),
+  config = require('../config'),
   amqpEasy = require('amqplib-easy')(config.amqp.url);
 
 module.exports = _.reduce(

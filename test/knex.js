@@ -2,7 +2,7 @@
 
 var knexPgCustomSchema = require('knex-pg-customschema'),
   path = require('path'),
-  config = require('../config')({ queueName: 'api_worker_users' });
+  config = require('../config');
 
 module.exports = {
   //debug: true,

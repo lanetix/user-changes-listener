@@ -3,7 +3,7 @@
 var Bromise = require('bluebird'),
   jwt = require('jsonwebtoken'),
   request = require('request-promise'),
-  config = require('../config')({ queueName: 'api_worker_users', schemaName: 'stagegate' }),
+  config = require('../config'),
   url = require('url'),
   makeToken = require('@lanetix/make-token')(
     config.authUri,

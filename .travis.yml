@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "0.10"
+  - "0.11"
+  - "0.12"
+  - "node"
+  - "iojs-v1"
+  - "iojs-v2"
+  - "iojs"
+
+addons:
+  postgresql: "9.3"
+
+before_install:
+  - psql -c 'create database test_user_listener;' -U postgres

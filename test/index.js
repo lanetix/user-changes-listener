@@ -1,7 +1,7 @@
 'use strict';
 
 var _ = require('underscore'),
-  config = require('../config')(),
+  config = require('../config'),
   Bromise = require('bluebird'),
   nock = require('nock'),
   jwt = require('jsonwebtoken'),

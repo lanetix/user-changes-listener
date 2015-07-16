@@ -7,7 +7,7 @@ var _ = require('underscore'),
 
 module.exports = {
   start: function (options) {
-    var config = require('./config')(options),
+    var config = require('./config'),
       User = options.User;
 
     if (!options.queue) {
