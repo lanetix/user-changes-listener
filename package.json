@@ -1,8 +1,9 @@
 {
   "name": "lanetix-user-changes-listener",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "engines": {},
   "scripts": {
+    "migrate-up": "bin/migrate up",
     "lint": "eslint --ignore-path .gitignore .",
     "test": "bin/test",
     "cover": "bin/cover",
