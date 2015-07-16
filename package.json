@@ -13,7 +13,6 @@
     "amqplib-easy": "^3",
     "bluebird": "^2",
     "bookshelf": "^0.7",
-    "bookshelf-deep-changed": "^1.0.0",
     "http-as-promised": "^1",
     "jsonwebtoken": "^5.0.2",
     "knex": "0.7.4",
