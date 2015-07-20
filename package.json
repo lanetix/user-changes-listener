@@ -1,6 +1,6 @@
 {
   "name": "lanetix-user-changes-listener",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "engines": {},
   "scripts": {
     "migrate-up": "bin/migrate up",

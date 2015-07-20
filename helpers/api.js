@@ -8,7 +8,7 @@ var Bromise = require('bluebird'),
   makeToken = require('@lanetix/make-token')(
     config.authUri,
     config.privateKey,
-    'urn:lanetix/auth'
+    config.issuer
   );
 
 module.exports = {
