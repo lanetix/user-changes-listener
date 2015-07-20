@@ -55,6 +55,8 @@ module.exports = {
             }
           },
           function (err) {
+            console.log('Err', err);
+
             if (options.callback) {
               return options.callback(err);
             }
