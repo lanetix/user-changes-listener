@@ -1,6 +1,6 @@
 {
   "name": "lanetix-user-changes-listener",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "engines": {},
   "scripts": {
     "migrate-up": "bin/migrate up",
@@ -18,7 +18,7 @@
     "jsonwebtoken": "^5.0.2",
     "knex": "0.7.4",
     "knex-pg-customschema": "^1",
-    "lanetix-microservice": "^1.6.1",
+    "@lanetix/microservice": "^2",
     "nock": "^2.7.0",
     "pg": "^3",
     "request-promise": "^0.4.2",

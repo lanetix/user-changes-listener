@@ -1,6 +1,6 @@
 'use strict';
 
-var keys = require('lanetix-microservice').keys;
+var keys = require('@lanetix/microservice').keys;
 
 module.exports = {
   apiUri: process.env.API_URL || 'http://localhost:5002',
