@@ -9,7 +9,8 @@ var _ = require('underscore'),
   amqp = require('amqplib-easy')(config.amqp.url),
   userChangesListener = require('../index.js'),
   User = require('./User'),
-  Bookshelf = require('./bookshelf');
+  Bookshelf = require('./bookshelf'),
+  should = require('should');
 
 describe('establish amqp', function () {
   var Model = Bookshelf.Model.extend({
@@ -89,17 +90,20 @@ describe('establish amqp', function () {
       organizationId = chance.integer({ min: 1, max: 100000 });
 
     return userChangesListener
-      .start({ User: User, queue: queue, durable: false, callback: function (model) {
-          try {
-            done();
-            return (model === null).should.be.ok;
-          } catch (err) { done(err); }
+      .start({
+        User: User,
+        queue: queue,
+        durable: false,
+        callback: function (model) {
+          should.equal(model, null);
+          done();
         }
       })
       .then(function () {
         return Bromise.all([
           amqp.sendToQueue(_.defaults({ queue: queue, queueOptions: { durable: false } }, config.amqp), { user_id: userId, item_id: userId, organization_id: organizationId })
         ]);
-      });
+      })
+      .catch(done);
   });
 });
