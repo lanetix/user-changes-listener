@@ -20,6 +20,8 @@ before_install:
 before_script:
   - bin/migrate up
 
+script: "npm test"
+
 notifications:
   email:
     - systems@lanetix.com

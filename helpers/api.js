@@ -1,7 +1,6 @@
 'use strict';
 
 var Bromise = require('bluebird'),
-  jwt = require('jsonwebtoken'),
   request = require('request-promise'),
   config = require('../config'),
   url = require('url'),
