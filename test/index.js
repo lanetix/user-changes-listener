@@ -76,9 +76,36 @@ describe('establish amqp', function () {
         return userChangesListener
           .start({ User: User, queue: queue, durable: false, callback: done })
           .then(function () {
-            return Bromise.all([
-              amqp.sendToQueue(_.defaults({ queue: queue, queueOptions: { durable: false } }, config.amqp), { user_id: user.id, item_id: user.id, organization_id: user.organization_id })
-            ]);
+            return amqp.sendToQueue(_.defaults({ queue: queue, queueOptions: { durable: false } }, config.amqp), { user_id: user.id, item_id: user.id, organization_id: user.organization_id });
+          });
+      });
+  });
+
+  it('should send to queue and save to db the exact same values', function (done) {
+    var queue = chance.guid(),
+      user = {
+        id: chance.integer({ min: 1, max: 100000 }),
+        organization_id: chance.integer({ min: 1, max: 100000 }),
+        avatar_url: 'https://secure.lanetix.com/css/images/default-avatar.png',
+        name: chance.name()
+      };
+
+    return Bromise.resolve()
+      .then(function () {
+        return new Model()
+          .save(user);
+      })
+      .then(function (model) {
+        user = model.toJSON();
+
+        nock(config.apiUri)
+          .get('/users/' + user.id)
+          .reply(200, user);
+
+        return userChangesListener
+          .start({ User: User, queue: queue, durable: false, callback: done })
+          .then(function () {
+            return amqp.sendToQueue(_.defaults({ queue: queue, queueOptions: { durable: false } }, config.amqp), { user_id: user.id, item_id: user.id, organization_id: user.organization_id });
           });
       });
   });

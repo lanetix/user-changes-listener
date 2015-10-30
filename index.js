@@ -55,13 +55,13 @@ module.exports = {
             }
           },
           function (err) {
-            console.log('Err', err);
+            console.log('Error:', err);
 
             if (options.callback) {
               return options.callback(err);
             }
 
-            throw err.statusCode;
+            throw err.statusCode || err;
           }
         );
     });
