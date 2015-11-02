@@ -41,7 +41,7 @@ module.exports = {
             })
           )
           .then(function (userDetails) {
-            return model.save(userDetails);
+            return model.save(userDetails, {require: false});
           });
         })
         .then(
